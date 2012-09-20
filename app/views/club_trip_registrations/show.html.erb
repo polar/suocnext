@@ -1,0 +1,20 @@
+<h3>Showing Trip <%= @club_trip_registration.trip_name %></h3>
+
+
+<%= render :partial => "show_tr" %>
+
+<% if @show_submit %>
+  <%= form_for @club_trip_registration,
+              :url => url_for(:action => :submit_registration,
+                              :id => @club_trip_registration),
+               :html => { :class => "MainForm" } do |f| %>
+    <p>
+    <%= f.submit "Submit This Trip Registration" %>
+  <% end %>
+<% end %>
+<p>
+<p>
+<% if @show_edit %>
+<%= link_to 'Edit Trip Registration', edit_club_trip_registration_path(@club_trip_registration) %>
+<% end %>
+<%= render :partial => "footer" %>

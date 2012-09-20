@@ -1,0 +1,31 @@
+<%
+# This partial generates an entry for a new leader.
+# A "new" leader has the special treatment of having the
+# hidden fields for the leadership and profile ids.
+#
+# Locals:
+#     field_name  The field name to use for the form fields.
+#     leader     The new ClubLeader model.
+#     rowclass    The CSS rowclass for the row.
+%>
+
+<% fields_for field_name, leader do |leader_form| %>
+  <%= leader_form.hidden_field :leadership_id %>
+  <%= leader_form.hidden_field :member_id %>
+  <tr <%= "class='#{rowclass}'" if rowclass %> >
+    <td><%= render_member_badge(leader.member) %></td>
+    <td><table>
+      <tr>
+        <th>Start Date</th>
+        <td><%= leader_form.text_field :start_date,
+                    :value => fmt_date(leader.start_date) %></td>
+       </tr>
+       <%=
+         # We don't see the end date when we enter a new leader
+         # as not to confuse the enterer. It default to 50 years
+         # from now. Check controller.
+         leader_form.hidden_field :end_date,
+                    :value => fmt_date(leader.end_date) %>
+    </table></td>
+  </tr>
+<% end %>

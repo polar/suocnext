@@ -1,0 +1,33 @@
+<% @meta = { :description => configatron.meta_description, :keywords => configatron.meta_keywords, :robots => configatron.robots_meta_list_content } %>
+
+  <div id="yui-main">
+    <div class="yui-b box">
+      <%= render_comatose(!@page.parent ? "" : @page.full_path).html_safe %>
+    </div>
+  </div>
+  <div class="yui-b">
+    <div id="page_nav">
+    <table>
+      <tr><td>
+        <%= if @home.photo
+              link_to image_tag(@home.photo.url(:small), :alt=> @home.title),
+              url_for(:controller => "page", :action => :show, :id => @home.slug)
+            end %>
+        <br>
+        <%= link_to @home.title,
+             url_for(:controller => "page", :action => :show, :id => @home.slug)%>
+      </td></tr>
+    <% for f in @children do %>
+      <tr><td>
+        <%= if f.photo
+              link_to image_tag(f.photo.url(:small), :alt=> f.title),
+              url_for(:controller => "page", :action => :show, :id => f.slug)
+            end %>
+        <br>
+        <%= link_to f.title,
+             url_for(:controller => "page", :action => :show, :id => f.slug)%>
+      </td></tr>
+    <% end %>
+    </table>
+    </div>
+  </div>

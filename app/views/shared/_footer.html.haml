@@ -1,0 +1,17 @@
+#ClubFooter
+  %ul
+    %li
+      %a{:href=>"/", :title=>"#{configatron.community_name} " + :home.l}= :home.l
+    - if !logged_in?
+      %li
+        = link_to :log_in.l , login_path 
+    - else
+      %li
+        %a{:href=>"/logout", :title=>:log_out_of_your.l + " #{configatron.community_name} " + :account.l}
+          =:log_out.l
+    %li
+      %a{:href=>"/page/show/about", :title=>:what_is.l + " #{configatron.community_name}?"}
+        =:about.l
+        
+  %p
+    Rocks!

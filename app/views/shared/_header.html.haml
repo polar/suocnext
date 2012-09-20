@@ -1,0 +1,42 @@
+#what
+  !!!%h1
+  %a{:href=>"/", :title=>"#{configatron.community_name}"}
+    %img{:src=>"/assets/header.jpg", :width=>"100%", :alt => "#{configatron.community_name}"}
+  - if logged_in?
+    = render :partial => 'shared/user_menu'
+  - else
+    %h2
+      =:welcome_message.l(:login_link => (link_to :log_in.l, login_path), :signup_link => (link_to :sign_up.l, signup_path))
+
+  #NavBar
+    %ul
+      = topnav_tab :trips.l, { :url => "/page/show/trips", :section => ['trips'] }
+      - Category.all.each do |c|
+        = topnav_tab c.name, {:url => category_path(c), :section => [c.name]}
+      = topnav_tab :forums.l, { :url => forums_path, :section => ['forums'] }
+      = topnav_tab :blogs.l, { :url => recent_path, :section => ['recent'] }
+      !!!= topnav_tab :events.l, { :url => events_path, :section => '[events'] }
+      = topnav_tab :people.l, { :url => users_path, :section => ['users'] }
+      - if current_user
+        = topnav_tab :my_profile.l, { :url => user_path(current_user), :section => ['my_profile']}
+      !!!= topnav_tab :donate.l, { :url => "/page/show/making-donations", :section => ['donate'] }
+      - if current_user
+        = topnav_tab "75th Reunion", { :url => "/reunion", :section => ['reunion'] }
+
+    / SiteSearch Google
+    %form{:method=>"get", :action=>"http://www.google.com/custom", :target=>"_top"}
+      %input{ :type=>"hidden", :name=>"domains", :value=>"#{configatron.app_host}"}
+      %label{ :for=>"search",  :style=>"display: none"}
+        = :search.l+" #{configatron.community_name}"
+      %input{ :type=>"text",:name=>"q", :size=>"17", :maxlength=>"255", :id=>"search"}
+      %input{ :type=>"hidden", :name=>"sitesearch", :value=>"#{configatron.app_host}", :id=>"ss1"}
+      %input{ :type=>"hidden", :name=>"client", :value=>"pub-9113954708528841"}
+      %input{ :type=>"hidden", :name=>"forid", :value=>"1"}
+      %input{ :type=>"hidden", :name=>"channel", :value=>"1842224655"}
+      %input{ :type=>"hidden", :name=>"ie", :value=>"ISO-8859-1"}
+      %input{ :type=>"hidden", :name=>"oe", :value=>"ISO-8859-1"}
+      %input{ :type=>"hidden", :name=>"cof", :value=>"GALT:#008000;GL:1;DIV:#FFFFFF;VLC:663399;AH:center;BGC:FFFFFF;LBGC:FFFFFF;ALC:0066CC;LC:0066CC;T:000000;GFNT:0000FF;GIMP:0000FF;LH:50;LW:90;S:http://#{configatron.app_host};FORID:1"}
+      %input{ :type=>"hidden", :name=>"hl", :value=>"en"}
+
+  / NavBar
+/ header

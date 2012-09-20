@@ -1,0 +1,17 @@
+<div class="box">
+  <h3>Select New Leader</h3>
+  <h2>Leadership of the <%= @club_leadership.name %></h2>
+  <div class="errors"></div>
+    <h3>Current Leader(s):</h3>
+    <% if !@current_leaders.empty? %>
+      <table>
+        <%= render_leader_list(@current_leaders) %>
+      </table>
+    <% else %>
+      There are no current leaders assigned for the leadership of the <%= @club_leadership.name %>.
+    <% end %>
+    <h3>Choose New Leader</h3>
+    <table>
+    <%= render_select(@club_leadership, @selected_leaders) %>
+    </table>
+</div>

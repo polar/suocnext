@@ -1,0 +1,73 @@
+<% if RAILS_ENV=="production" %>
+<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="9EJV53DJPADZG">
+<% else %>
+<form target="paypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="CA7HY8LJW4J2E">
+<% end %>
+
+<input type="hidden" name="on3" value="memberid">
+ <%= "<input type='hidden' name='os3' value='#{@current_user.id}'>" %>
+
+<tr>
+<td></td>
+<td valign="top">
+<input type="hidden" name="on0" value="Type">
+<select name="os0">
+	<option value="Adult">Adult - $99.00</option>
+</select>
+</td>
+<td valign="top">
+<label>Full Name:</label>
+<input type="hidden" name="on2" value="Full Name">
+ <%= "<input type='text' name='os2' readonly='true' value='#{@current_user.name}'>" %>
+</td>
+<td valign="top">
+<input type="hidden" name="on1" value="T-Shirt">
+<label>T-Shirt:</label>
+<select name="os1">
+	<option value="Small">Small</option>
+	<option value="Medium" selected="true">Medium</option>
+	<option value="Large">Large</option>
+<%
+#	<option value="X-Large">X-Large</option>
+#	<option value="2X-Large">2X-Large</option>
+#	<option value="3X-Large">3X-Large</option>
+%>
+</select>
+</td>
+</tr>
+<tr>
+<td></td>
+<td colspan="3">
+Days Attending:
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<input type="hidden" name="on4" value="Friday"/>
+<input type="checkbox" name="os4" value="1" checked="false">Friday</input>
+</td>
+<td>
+<input type="hidden" name="on5" value="Saturday"/>
+<input type="checkbox" name="os5" value="1" checked="true">Saturday</input>
+</td>
+<td>
+<input type="hidden" name="on6" value="Sunday"/>
+<input type="checkbox" name="os6" value="1" checked="true">Sunday</input>
+</tr>
+<tr>
+<td></td>
+<td colspan="3">
+<br/>
+<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_cart_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+<br/>
+<br/>
+Do this only once!</td>
+</tr>
+
+</form>

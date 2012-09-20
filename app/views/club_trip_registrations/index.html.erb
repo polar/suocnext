@@ -1,0 +1,38 @@
+<h3>Club Trip Registrations</h3>
+<p>
+Select a trip registration from below to examine the details and who is registered for the trip.
+If you are not the leader you can add or remove yourself from the trip registration.
+<p>
+<% if @show_create %>
+Leaders, use "Create New Trip Registration" link below to create a new pending trip registration.
+If you want to update the trip details of your trip or change the members going, click the "Edit" button.
+<p>
+Important! You must submit the trip before the trip leaves. Once you submit the trip, it will no longer be shown on this page.
+<% end %>
+<h3>Pending Trip Registrations</h3>
+<table class="tripstats">
+  <tr class="tripstats">
+   <th>Trip Name</th>
+   <th>Leader</th>
+   <th>Activity</th>
+   <th>People</th>
+   <th>Date</th>
+  </tr>
+
+<% for club_trip_registration in @club_trip_registrations %>
+  <tr>
+    <td><%= link_to club_trip_registration.trip_name, club_trip_registration %></td>
+    <td><%= link_to club_trip_registration.leader.name, user_path(club_trip_registration.leader) %></td>
+    <td><%= club_trip_registration.leadership.name %></td>
+    <td class="decimal"><%= club_trip_registration.club_members.size %></td>
+    <td><%= club_trip_registration.departure_date.strftime("%m-%d-%Y") %></td>
+    <% if show_edit?(club_trip_registration) %>
+    <td><%= button_to 'Edit', edit_club_trip_registration_path(club_trip_registration), :method => :get %></td>
+    <% end %>
+    <% if show_delete?(club_trip_registration) %>
+    <td><%= button_to 'Delete', club_trip_registration_path(club_trip_registration), :method => :delete %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+<%= render :partial => "footer" %>

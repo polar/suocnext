@@ -1,0 +1,36 @@
+<%
+# This partial renders the editor for the basic information
+# Locals:
+#   member  The ClubMember
+#   clazz   The class for the surrounding div, optional.
+#
+%>
+<table class="badge">
+  <tr>
+    <td>
+      <h5>
+      <%= link_to image_tag( member.avatar_photo_url(:thumb), :class => "polaroid"), user_path(member) %>
+      </h5>
+    </td>
+    <td>
+      <ul>
+	<li class="full_name">
+	  <%= link_to member.login, user_path(member) %>
+	</li>
+	<% if !member.club_aliases.nil? && !member.club_aliases.empty? %>
+	  <li class="aliases">
+	    Aliases: <%= member.club_aliases %>
+	  </li>
+	<% end %>
+	<% if member.club_affiliation %>
+	  <li class="affiliation">
+	    Affiliation: <%= member.club_affiliation.name %>
+	  </li>
+	<% end %>
+	<li class="date">
+	  Member Since: <%= member.club_start_date.strftime("%Y") if member.club_start_date %>
+	</li>
+      </ul>
+    </td>
+  </tr>
+</table>

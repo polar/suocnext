@@ -1,0 +1,108 @@
+<div id="club_dashboard_nav" class="box">
+  <h3><%= :club_office.l %></h3>
+  <table>
+    <tr>
+      <td>
+        <%= link_to "Trip Registrations", club_trip_registrations_path %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= link_to "Trips", club_trips_path %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= link_to "Announcements", club_announcements_path %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= link_to "Offices", club_offices_path %>
+      </td>
+    <tr>
+    </tr>
+      <td>
+        <%= link_to "Activities", club_activities_path %>
+      </td>
+    <tr>
+    </tr>
+      <td>
+        <%= link_to "Leaderships", club_leaderships_path %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= link_to "Accounts", acct_accounts_path %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= link_to "Accounts Reports", acct_reports_path %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= link_to "Ledgers", acct_ledgers_path %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= link_to "E-Room Ledger", acct_ledger_path("e-room-ledger") %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= link_to "SUOC Treasurer Ledger", acct_ledger_path("suoc-treasurer-ledger") %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= link_to "Rec Services Ledger", acct_ledger_path("rec-services-ledger") %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= link_to "Memberships", club_memberships_path %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= link_to "Documents", club_documents_path %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= link_to "Home Pages", comatose.pages_path %>
+      </td>
+    <tr>
+    <tr>
+      <td>
+        <%= link_to "Certifications", cert_certifications_path %>
+      </td>
+    <tr>
+    <tr>
+      <td>
+        <%= link_to "My Officerships",
+             url_for( :controller => :club_officers, :action => "my_index", :id => "me") %>
+      </td>
+    <tr>
+      <td>
+        <%= link_to "My Activity Chairships",
+             url_for( :controller => :club_chairs, :action => "my_index", :id => "me") %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= link_to "My Leaderships",
+             url_for( :controller => :club_leaders, :action => "my_index", :id => "me") %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= link_to "My Certifications",
+             url_for( :controller => :cert_member_certs, :action => "my_index", :id => "me") %>
+      </td>
+    </tr>
+  </table>
+</div>

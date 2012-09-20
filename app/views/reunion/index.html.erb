@@ -1,0 +1,125 @@
+
+<h3>75th SUOC Reunion Registration</h3>
+<p>
+The 75th Year of SOUC Reunion was a grand success!
+Please go to reunion site
+<a href="http://suocoldtimers.org">http://suocoldtimers.org</a> for pictures and info.
+
+<% if false 
+    # REUNION IS OVER! 
+%>
+
+
+<p>
+If you want to see who's going, click <a href="http://suoc.syr.edu/reunion/who">here</a>.
+</p>
+<table>
+<tr>
+<td colspan="5">
+<b>Notice to Procrastinators!</b>
+<p>Electronic Registration has been shutdown as of Wednesday, Sep 29, 2010. If you show up, please bring cash to the camp.
+$99 Adult 16+, $50 Kid 10-16, $35 Kid 5-9. Extra T-Shirts are $11.00.
+<P>
+We have already ordered the T-Shirts! We ordered a little bit more than people who registered, but not much more. 
+Suzie LaMont, the TShirt Girl, informs us that Medium, XL, 2X and 3X TShirts are now sold out.
+</td>
+</tr>
+<% if @self_registered %>
+<tr>
+<td colspan="5">
+<h2>Congratulations! <%= current_user.name %> is registered for the 75th Reunion!</h2>
+We have you on record as registering for the SUOC 75th Reunion.
+You may still register other people you may be bringing.
+</td>
+</tr>
+<% end %>
+
+<% if !@registrants.empty? %>
+<tr>
+<td colspan="5">
+You have the following items under your name:
+<% @registrants.each do |r| %>
+<%= render :partial => "item", :collection => r.items %>
+<% end %>
+</td>
+</tr>
+<% end %>
+
+<% if !@registrants.empty? %>
+<tr>
+<td colspan="5">
+Please go to <a href="http://suocoldtimers.org">http://suocoldtimers.org</a> to contact somebody if you need to cancel and need a refund.
+</td>
+</tr>
+<tr>
+<td colspan="5">
+<hr/>
+</td>
+</tr>
+<% end %>
+<% # Shutting down Registration
+   if false
+%>
+<% if ! @self_registered %>
+<tr>
+<td colspan="5">
+<h2>Register for the Event of the Century!</h2>
+</td>
+</tr>
+<% end %>
+
+<tr>
+<td><img alt="Step 1" src="/assets/Step1.gif"></td>
+<% if ! @self_registered %>
+<td colspan="5">Register Yourself. Please select T-Shirt Size.</td>
+</tr>
+<%= render :partial => "self_registration_add_cart" %>
+<% else %>
+<td colspan="5">You're already registered!!.</td>
+</tr>
+<% end %>
+
+<tr>
+<td colspan="5">
+<hr/>
+</td>
+</tr>
+<tr>
+<td><img alt="Step 2" src="/assets/Step2.gif"></td>
+<td colspan="4">Register any kids and guests you will be paying for.</td>
+</tr>
+<%= render :partial => "guest_registration_add_cart" %>
+<tr>
+<td colspan="5">
+<hr/>
+</td>
+</tr>
+
+<tr>
+<td><img alt="Step 3" src="/assets/Step3.gif"></td>
+<td colspan="1">Add any extra tshirts you might want.</td>
+<td><a href="assets/TShirts.gif"><img src="assets/TShirts.gif" width="200" height="70"/></a><br>Click image to enlarge.</td>
+</tr>
+<%= render :partial => "x_tshirt" %>
+<tr>
+<td colspan="5">
+<hr/>
+</td>
+</tr>
+
+<tr>
+<td><img alt="Step 4" src="/assets/Step4.gif"></td>
+<td colspan="4">Review your shopping cart and checkout, if you haven't already.<br/>
+Please make sure that you did Step 1.
+</td>
+</tr>
+<%= render :partial => "view_cart" %>
+<% end 
+   # Registratio Shutdown
+%>
+</table>
+
+
+<% end 
+   # REUNION IS OVER
+%>

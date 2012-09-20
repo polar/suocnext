@@ -1,0 +1,17 @@
+<tr>
+<td><%= if @sort == "last"
+           a = attendee.name.split
+           l = a.slice!(-1)
+           (l + ", ") + a.join(" ")
+        else
+          attendee.name
+        end
+     %></td>
+<td><%= attendee.guest_of %></td>
+<td><%= attendee.affiliation %></td>
+<td><%= attendee.status %></td>
+<td><%= attendee.year %></td>
+<td><%= attendee.type %></td>
+<td><%= attendee.date.strftime("%m-%d-%Y") %></td>
+
+</tr>

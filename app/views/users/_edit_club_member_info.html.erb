@@ -1,0 +1,85 @@
+<%
+# This partial renders the editor for the basic information
+# Locals:
+#   member  The ClubMember
+#
+%>
+<div id="BasicInfo" >
+<%= form_remote_tag(:update => "BasicInfo",
+    :url => { :action => :show_club_member_info,
+               :id => member }) do %>
+  <h3>SUOC Information <%= submit_tag "Cancel Edit" %></h3>
+<% end %>
+<div class="errors"></div>
+<div class="MainForm">
+<%= form_remote_for(member,
+            :update => "BasicInfo",
+            :url => { :action => :update_club_member_info,
+                      :id => member}) do |f| %>
+  <%= f.error_messages %>
+  <table>
+  <tr>
+    <th>Aliases:</th><td><%= f.text_field :club_aliases %></td>
+  </tr>
+  <tr>
+    <th>SUID:</th>
+    <td>
+      <%= if permitted_to? :write_id, member
+            fmt_memberid(member)
+            f.text_field :club_memberid
+          else
+            "Cannot Edit"
+          end
+       %>
+    </td>
+  </tr>
+  <tr>
+    <th>Contact:</th>
+    <td><%= f.text_field :club_contact %>
+    </td>
+  </tr>
+  <tr>
+    <th>Affiliation:</th>
+    <td><%= f.collection_select :club_affiliation_id,
+                ClubAffiliation.find(:all), :id, :name %>
+    </td>
+  </tr>
+  <tr>
+    <th>Since (MM-DD-YYY):</th>
+    <td><%= f.text_field :club_start_date,
+            :value => fmt_date(member.club_start_date) %>
+    </td>
+  </tr>
+  <tr>
+    <th>Member Status:</th>
+    <td><%= f.collection_select :club_member_status_id,
+                                ClubMemberStatus.find(:all), :id, :name %>
+    </td>
+  </tr>
+  <tr>
+    <th>Class of YYYY:</th>
+    <td><%= f.text_field :club_grad_year,
+            :value => fmt_date(member.club_grad_year) %>
+    </td>
+  </tr>
+
+  </table>
+  <p>
+  <%= f.submit "Save Changes" %>
+  </p>
+<% end %>
+</div>
+<div class="links">
+<%= link_to "Make me an Officer",
+    url_for(:controller => "club_officers", :action => "my_index", :id => "me") %>
+|
+<%= link_to "Make me an Activity Chair",
+    url_for(:controller => "club_chairs", :action => "my_index", :id => "me") %>
+|
+<%= link_to "Make me a Leader",
+    url_for(:controller => "club_leaders", :action => "my_index", :id => "me") %>
+|
+<%= link_to "Add Certification",
+    url_for(:controller => "cert_member_certs", :action => "my_index", :id => "me") %>
+</div>
+</div>

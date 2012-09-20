@@ -1,0 +1,16 @@
+<h3>My Leaderships (<%= @current_user.name %>)</h3>
+  <%= render :partial => "edit_club_leader", :locals => { :leader => @club_leader } %>
+<h3>My Current Leaderships</h3>
+  <% if @current_leaders.nil? || @current_leaders.empty? %>
+    You have no current leaderships.
+  <% else %>
+    <%= render :partial => "member_leaders",
+               :locals => { :member_leaders => @current_leaders } %>
+  <% end %>
+<h3>My Past Leaderships</h3>
+  <% if @past_leaders.nil? || @past_leaders.empty? %>
+    You have no past leaderships.
+  <% else %>
+      <%= render :partial => "member_leaders",
+                 :locals => { :member_leaders => @past_leaders } %>
+  <% end %>

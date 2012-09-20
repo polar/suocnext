@@ -1,0 +1,44 @@
+## example crontab entry:
+###
+### 0 3 * * * cd /var/www/suoc/current && nice rake backup RAILS_ENV=production >> /var/www/suoc/current/log/production_backup_system.log
+###
+### config file - goes in config/backup.yml
+##
+## # Archive Directory in which to place archive files
+## archivedir: db/archives
+## # Backup staging directory, in which to place the SQL Dump file
+## backupdir: db/backup
+## # SQL Dump file. File to which to dump the database. If relative path
+## # it's relative to the Backup staging directory
+## sqldumpfile: db.sql
+## #
+## # Directories to include in the archive.
+## dirs:
+##   - public/photos
+##   - public/updloaded_files
+##
+## Each environment can override. For dirs, override absolute.
+## production:
+##   sqldumpfile: production.sql
+## development:
+##   sqldumpfile: development.sql
+##   dirs:
+##    - lib
+##    - public/photos
+##    - public/uploaded_files
+
+# Make sure this directory exists or is able to be created.
+archivedir: /var/backups/suoc/website
+backupdir: db/backup
+sqldumpfile: db.sql
+
+production:
+  dirs:
+   - public/system/photos
+   - public/system/page_photos
+
+development:
+  dirs:
+    - public/system/photos
+    - public/system/page_photos
+

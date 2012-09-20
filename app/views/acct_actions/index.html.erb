@@ -1,0 +1,24 @@
+<h3>Account Actions</h3>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Target Account</th>
+    <th>Category</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+  <%= render :partial => "acct_action", :collection => @acct_actions %>
+</table>
+<p>
+<% if permitted_to? :create, :acct_actions %>
+  <%= link_to "New Account Action", new_acct_action_path %>
+<% end %>
+<p>
+<%= link_to "Account Types", acct_account_types_path %>
+|
+<%= link_to "Account Categories", acct_categories_path %>
+|
+<%= link_to "Account Actions", acct_actions_path %>
+|
+<%= link_to "Action Sets", acct_action_sets_path %>

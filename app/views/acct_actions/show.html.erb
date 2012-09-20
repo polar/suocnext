@@ -1,0 +1,31 @@
+<h3>Account Action</h3>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <td><%= @acct_action.name %></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td><%= @acct_action.description %></td>
+    <tr>
+      <th>Target Account</th>
+      <td><%= @acct_action.account.name %></td>
+    </tr>
+    <tr>
+      <th>Category</th>
+      <td><%= @acct_action.category.name %></td>
+    </tr>
+    <tr>
+      <th>Action Type</th>
+      <td><%= @acct_action.action_type.name %></td>
+    </tr>
+  </table>
+<p>
+<p>
+<%= link_to 'Edit', edit_acct_action_path(@acct_action) %>
+|
+<%= link_to 'Actions', acct_actions_path %>
+<p>
+<%= button_to "Delete This Action", acct_action_path(@acct_action),
+              :method => :delete, :confirm => "Are you sure?" %>

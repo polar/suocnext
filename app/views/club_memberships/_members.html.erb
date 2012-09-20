@@ -1,0 +1,18 @@
+<%
+# locals
+#  members  The members.
+%>
+<table class="memberships">
+<tr>
+  <th>Name</th>
+  <th>ID</th>
+  <th>Affiliation</th>
+  <th>Status</th>
+  <th>Start Year</th>
+  <th>Grad Year</th>
+  <% if @year %>
+  <th><%= @year %> Trips</th>
+  <% end %>
+</tr>
+<%= render :partial => "member", :collection => members %>
+</table>

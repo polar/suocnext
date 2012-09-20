@@ -1,0 +1,10 @@
+<%
+ # This partial renders a row in the table for an AcctAction
+%>
+<tr>
+ <td><%= link_to category_item["name"], acct_category_path(category_item["category"]) %></td>
+ <td><%= category_item["description"] %></td>
+ <td class="decimal"><%= sprintf("%10.2f", category_item["income_balance"]) %></td>
+ <td class="decimal"><%= sprintf("%10.2f", category_item["expense_balance"]) %></td>
+ <td class="decimal"><%= sprintf("%10.2f", category_item["balance"]) %></td>
+</tr>

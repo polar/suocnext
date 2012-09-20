@@ -1,0 +1,707 @@
+
+/*
+ *This deals with <td> and inputs that are aligned for decimal
+ *numbers.
+ */
+
+ /* For some reason I need this .{} just to get the following
+  * stuff to work
+  */
+b, strong {
+  font-weight: bolder;
+}
+
+.decimal {
+  text-align: right;
+}
+
+/*
+ * Tables holding listings of things
+ */
+
+.listing {
+  padding: 2em;
+}
+.listing  tr th{
+  padding: 0px 20px 2px 0px;
+  font-weight: bold;
+}
+.listing  tr td{
+  padding: 0px 20px 2px 0px;
+}
+
+/*
+ * Some links we like to stand out
+ */
+.links {
+  font-weight: bold;
+  font-size: 110%;
+}
+
+/*
+ * Entry and Current_Entry
+ *  This is used to wrap member badges and list info in a table
+ *  row with borders and such.
+ *
+ *  The current entry differs in the background color to make
+ *  member entries stand out.
+ */
+.entry {
+    margin-bottom: 1em;
+}
+
+.entry h2{
+    margin-bottom: .5em;
+    font-weight:   bold;
+    font-size:     153.9%;
+}
+
+.entry h3{
+    font-size: 123.1%;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ffd735;
+    margin:1.5em 0 1em 0;
+}
+
+.current_entry {
+    border: 1px solid #94beff;
+    background: #e1ecff;
+    padding: 1em;
+}
+
+.current_entry h2{
+    margin-bottom: .5em;
+    font-weight: bold;
+    font-size: 153.9%;
+}
+
+.current_entry h3{
+    border: none;
+    margin: 0 0 .5em 0;
+    padding: .5em;
+    background: #94beff;
+    color: #38465b;
+}
+
+/*
+ * Club Member badge is a table.
+ */
+
+/* Avatar Header */
+.badge tr td h5{
+  float: left;
+  width: 90px;
+}
+
+.badge tr td ul{
+  font-size: 85%;
+}
+
+/* Avatar Image and Link */
+.badge tr td h5 a img{
+  display: block;
+  border: 1px solid #a2a19b;
+  padding: 2px;
+  background: #fff;
+  width: 80px;
+}
+
+.badge tr td h5 a:hover img{
+  background: #a2a19b;
+}
+/* Each Side list element is padded left 16px
+ * to give a small indent
+ */
+.badge tr td ul li{
+  padding: 3px 0;
+  border-bottom: 1px dotted #a2a19b;
+  padding-left: 15px;
+}
+
+/* The full name, usually the first list element
+ * will be slightly larger.
+ */
+.badge tr td ul li.full_name{
+  font-size: 110%;
+  font-weight: bold;
+  padding:0 0 3px 0;
+}
+
+/*
+ * The EntryForm is used to give the same look and feel
+ * within entries for club officer, leaders, etc.
+ */
+.EntryForm {
+}
+
+.EntryForm .button-to {
+  border: 1px solid #ccc;
+  text-align: center;
+  background: #777;
+  color: #777;
+  background: #f8f8f8;
+  width: 9em;
+}
+
+.EntryForm .button-to input{
+  border: 0px solid #ccc;
+  padding: 1px;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin: 1px 0;
+  color: #777;
+  background: #f8f8f8;
+  width: 7em;
+}
+.EntryForm .button-to input:focus{
+  color: #777;
+  border-color: #777;
+  background: #f8f8f8;
+}
+.EntryForm .button-to input:hover{
+  background:#cccccc;
+}
+
+.EntryForm select{
+  border:1px solid #ccc;
+}
+
+/*
+ * Users
+ */
+.name_list .full_name{
+  font-weight: bold;
+  padding:0 0 3px 0;
+}
+
+/*
+ * List of Offices
+ */
+.offices {
+}
+
+.offices .row{
+    border: 1px solid #b4dfff;
+    background: #f2fdff;
+    padding: 1em;
+}
+
+.offices .name{
+  text-align: top;
+  font-weight: bold;
+}
+
+.offices .description{
+  padding:10px 10px 10px 10px;
+}
+
+.offices .name_list .full_name{
+  font-weight: bold;
+  padding:0 0 3px 0;
+}
+
+/*
+ * Transactions
+ */
+.transactions {
+  width: 100%;
+}
+
+.transactions .header th{
+  padding: 0px 10px 0px 0px;
+}
+
+.transactions tr td{
+}
+
+.transactions tr.odd {
+  background: #f2fdff;
+}
+
+.transactions .date_entry input{
+  width: 5em;
+  background:#F8F8F8 none repeat scroll 0 0;
+  border:1px solid #CCCCCC;
+  color:#777777;
+  font-weight:bold;
+  padding:6px;
+}
+
+.transactions .description {
+  width: 250px;
+}
+
+#transaction_entry_body {
+  width: 55%;
+}
+#transaction_entry_body table {
+  width: 100%;
+}
+#transaction_entry_body table tr td input {
+  width: 100%;
+}
+#transaction_entry_body .year_entry {
+  width: 4em;
+}
+
+.transactions .description_entry input{
+  background:#F8F8F8 none repeat scroll 0 0;
+  border:1px solid #CCCCCC;
+  color:#777777;
+  font-weight:bold;
+  padding:6px;
+}
+.transactions .member_entry, .transactions .description_entry{
+  width: 100%;
+}
+.transactions .year_entry input{
+  width: 4em;
+  background:#F8F8F8 none repeat scroll 0 0;
+  border:1px solid #CCCCCC;
+  color:#777777;
+  font-weight:bold;
+  padding:6px;
+}
+
+.transactions .action_entry select{
+  background:#F8F8F8 none repeat scroll 0 0;
+  border:1px solid #CCCCCC;
+  color:#777777;
+  font-weight:bold;
+  padding:5px;
+}
+
+.transactions .decimal_entry input{
+  width: 4em;
+  background:#F8F8F8 none repeat scroll 0 0;
+  border:1px solid #CCCCCC;
+  color:#777777;
+  font-weight:bold;
+  text-align:right;
+  padding:6px;
+}
+
+.transactions .button {
+  text-align: center;
+  padding: 6px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.transactions .button input{
+  padding-left: 1em;
+  padding-right: 1em;
+  background: #008000;
+  font-size: 123%;
+  border: 4px solid #004500;
+  color: #fff;
+  width: auto;
+  cursor: pointer;
+}
+.transactions .button input:focus{
+  color: #777;
+  border-color: #777;
+  background: #f8f8f8;
+}
+.transactions .button input:hover{
+  background:#cccccc;
+}
+
+.memberships table{
+  padding: 2em;
+}
+
+.memberships th{
+  padding: 0px 10px 0px 0px;
+}
+.memberships .membership td{
+  padding: 0px 10px 0px 0px;
+}
+
+.memberships .current {
+  color: #008800;
+}
+
+.membership .date td{
+  text-align: left
+}
+/*
+ * Current Certifications in User/show
+ */
+.certifications table{
+  padding: 2em;
+}
+
+.certifications th{
+  padding: 0px 10px 0px 0px;
+}
+.certifications .certification td{
+  padding: 0px 10px 0px 0px;
+}
+
+.certifications .currentverified {
+  color: #008800;
+}
+
+.certification .date td{
+  text-align: left
+}
+/*
+ * Current Leaders in User/show
+ */
+.leaders table{
+  padding: 2em;
+}
+
+.leaders th{
+  padding: 0px 10px 0px 0px;
+}
+.leaders .leader td{
+  padding: 0px 10px 0px 0px;
+}
+
+.leaders .currentverified {
+  color: #008800;
+}
+
+.leader .date td{
+  text-align: left
+}
+/*
+ * Current Officers in User/show
+ */
+.officers table{
+  padding: 2em;
+}
+
+.officers th{
+  padding: 0px 10px 0px 0px;
+}
+.officers .officer td{
+  padding: 0px 10px 0px 0px;
+}
+
+.officers .current {
+  color: #008800;
+}
+
+.officer .date td{
+  text-align: left
+}
+
+/*
+ * Current Chairs in User/show
+ */
+.chairs table{
+  padding: 2em;
+}
+
+.chairs th{
+  padding: 0px 10px 0px 0px;
+}
+.chairs .chair td{
+  padding: 0px 10px 0px 0px;
+}
+
+.chairs .current {
+  color: #008800;
+}
+
+.chair .date td{
+  text-align: left
+}
+
+.tripstats table{
+  padding: 2em;
+}
+.tripstats th{
+  padding: 0px 10px 0px 0px;
+}
+.tripstats .leadershipstats .leaderstats td{
+  padding: 0px 10px 0px 0px;
+}
+/*
+ * Page Navigation Column
+ * It's a table sitting the left column.
+ * Center the text and expand the table to the
+ * column for proper centering.
+ */
+#page_nav{
+  text-align: center;
+}
+
+#page_nav table{
+  width: 100%;
+}
+
+/*
+ * The Club Administration Naviation.
+ */
+#club_dashboard_nav {
+  text-align: left;
+}
+
+#page_photo_form {
+  border: 3px solid gray !important;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  background: #FFF;
+  padding: 15px;
+}
+#page_photo_form FORM {
+  display: inline;
+  margin: 0px;
+  padding: 0px;
+}
+#page_photo_form A {
+  color: maroon !important;
+  border-bottom: 1px solid gray !important;
+}
+#page_photo_form A:hover {
+  color: red !important;
+  border-bottom: 1px solid red !important;
+}
+
+/* =============================================== */
+/* CLUB FOOTER
+/* =============================================== */
+
+#ClubFooter {
+  margin: 0px 0;
+  font-size: 100%;
+}
+
+#ClubFooter ul, #ClubFooter ul li{
+  float: left;
+}
+
+#ClubFooter li a{
+  padding: 2px 10px;
+  display: block;
+  border-left: 1px solid #ccc;
+}
+
+#ClubFooter li#rss a{
+  color: #fff;
+  background: orange;
+  text-decoration: none;
+}
+
+
+#ClubFooter li:first-child a{
+  border: none;
+  padding-left: 0;
+}
+
+
+#ClubFooter p{
+  float: right;
+  padding: 7px 0 6px 120px;
+  font-size: 150%;
+  font-weight: bold;
+  background:
+    url(/assets/sm-suoc.gif)
+    no-repeat left center;
+}
+
+/* ---------------------------------------------
+ * Trips
+ * --------------------------------------------*/
+TABLE#club_trips{
+  border: 1px solid #ccc;
+  background: #eeeeff;
+  width: 100%;
+  font-size: 100%;
+}
+TABLE#club_trips TR {
+  margin: 10px;
+}
+TABLE#club_trips TR TD,
+TABLE#club_trips TR TH {
+  padding: 5px 2em 0px 0;
+}
+TABLE#club_trips TR TH {
+  font-weight: bold;
+}
+
+/* ---------------------------------------------
+ * Announcements
+ * --------------------------------------------*/
+TABLE#club_announcements{
+  border: 1px solid #ccc;
+  background: #eeffee;
+  width: 100%;
+  font-size: 100%;
+}
+TABLE#club_announcements TR {
+  margin: 10px;
+}
+TABLE#club_announcements TR TD,
+TABLE#club_announcements TR TH {
+  padding: 5px 2em 0px 0;
+}
+TABLE#club_announcements TR TH {
+  font-weight: bold;
+}
+
+/*
+ * Login Messages
+ */
+TABLE.login_messages{
+  border: 1px solid #ccc;
+  background: #ffffee;
+  width: 100%;
+  font-size: 123%;
+}
+TABLE.login_messages TR {
+  margin: 10px;
+}
+TABLE.login_messages TR TD,
+TABLE#club_announcements TR TH {
+  padding: 5px 2em 10px 10px;
+}
+TABLE.login_messages TR TH {
+  font-weight: bold;
+}
+
+/*
+ * Reunion Page
+ */
+TABLE.reunion_charges {
+  border: 1px solid #ccc;
+  border-style: hidden;
+}
+TABLE.reunion_charges TR TD {
+  border: 1px solid #ccc;
+}
+TABLE.paypal_button {
+  border-style: hidden;
+}
+
+TABLE.paypal_button TR TD {
+  border: 0px hidden none;
+  border-style: hidden;
+}
+
+TABLE.reunion TR TH {
+  padding: 5px 10px 2px 0px;
+}
+
+/*
+ * Override the CE location chooser that is explicitly
+ * setting the size in the view.
+ */
+#location_chooser select{
+  width: 10em !important;
+}
+
+/*
+ * The screen.css neglected CSS for selects
+ */
+.MainForm select{
+  border:1px solid #ccc;
+  font-weight: bold;
+  font-size: 123.1%;
+  color: #777;
+  width: 261px;
+  padding: 5px;
+  background: #f8f8f8;
+}
+.MainForm .fieldWithErrors select{
+  background: #ffd5d5;
+  border-color: #ff0000;
+  color: #ff0000;
+}
+
+/*
+ * Restoring some things that were zeroed out by
+ * resetGrid.
+ */
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.alert {
+  color: red;
+}
+
+
+/*
+ * Actions Table
+ */
+.acct_actions tr th {
+  font-weight: bold;
+}
+/*
+ * Accounts Table for acct_ledgers
+ */
+.acct_accounts .title {
+  text-align: center;
+  padding: 10px 20px 10px 0px;
+  border:none;
+}
+.acct_accounts tr th {
+  padding: 0px 20px 0px 0px;
+}
+.acct_accounts .position input {
+  width: 1em;
+}
+
+/*
+ * Invisible Help
+ */
+#invisible_help {
+  display: none;
+}
+/*
+ * Trip Registrations
+ */
+.member_drag {
+}
+.member_drag img{
+  float: left;
+}
+.member_drag .member_content{
+  margin-left: 30px;
+  vertical-align: middle;
+  text-align: left;
+}
+.member_drag .membership_current .full_name a,
+.membership_help .membership_current{
+  color: #208020;
+}
+.member_drag .membership_Active .full_name a,
+.membership_help .membership_Active{
+  color: #b28303;
+}
+.member_drag .membership_Life .full_name a,
+.membership_help .membership_Life{
+  color: #4a138a;
+}
+.member_drag .membership_Inactive {
+}
+.member_drag .membership_Deceased {
+}
+.member_drag .membership_Retired {
+}
+.member_drag .membership_other .full_name a,
+.membership_help .membership_other{
+  color: #dd1111;
+}
+div.auto_complete ul li .member_drag .full_name .member_link {
+  display: none;
+}
+div.auto_complete ul li .member_drag .full_name .member_name {
+  display: block;
+}
+.drop_zone .member_drag .full_name .member_link {
+  display: block;
+}
+.drop_zone .member_drag .full_name .member_name {
+  display: none;
+}

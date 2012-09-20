@@ -1,0 +1,28 @@
+!!!
+%html
+  %head
+    %link{:rel=>"shortcut icon", :href=>"/favicon.ico"}
+    %meta{"http-equiv"=>"Content-Type", :content=>"text/html;charset=utf-8"}
+
+    %title= "Comatose Admin for SUOC"
+    = render :partial => "shared/scripts_and_styles"
+    = stylesheet_link_tag "club.css"
+    = stylesheet_link_tag "comatose.css"
+    = javascript_include_tag "comatose_support.js"
+  %body
+    #doc4{:class => "yui-t#{@sidebar_left ? 3 : 6}"}
+      #hd
+        = render :partial => "shared/header"
+
+      #bd
+        #yui-main
+          .yui-b
+            .box
+              %h3 Home Page Administration
+              #content
+                ~ yield
+        .yui-b
+          = render :partial => "shared/admin_nav"
+      #ft
+      = render :partial => "shared/footer"
+

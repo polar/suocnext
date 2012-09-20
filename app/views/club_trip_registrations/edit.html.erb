@@ -1,0 +1,10 @@
+<h3>Editing Club Trip Registration</h1>
+
+<%= render :partial => "users/user_badge",
+           :locals => { :member => @club_trip_registration.leader } %>
+
+<%= render :partial => "edit_help" %>
+<%= render :partial => "edit_tr"  %>
+
+<%= link_to 'Go to Submit', @club_trip_registration %>
+<%= render :partial => "footer" %>
